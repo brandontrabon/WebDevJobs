@@ -1,0 +1,22 @@
+{
+  "name": "web-dev-jobs-api",
+  "version": "1.0.0",
+  "description": "The api for the web dev jobs project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon Trabon",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.1",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "jwt-simple": "^0.5.0",
+    "mongoose": "^4.5.1",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0"
+  }
+}

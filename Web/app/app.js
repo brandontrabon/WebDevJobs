@@ -8,13 +8,15 @@ define([
     'angular',
     'ui.router',
     './user/user',
-    './widgets/site-nav/site-nav'
+    './widgets/site-nav/site-nav',
+    './widgets/search-box/search-box'
 ], function(ng) {
     return (function() {
         var app = ng.module('webDevJobs', [
             'ui.router',
             'user',
-            'siteNav'
+            'siteNav',
+            'searchBox'
         ]);
 
         return app;

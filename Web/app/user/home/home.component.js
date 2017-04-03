@@ -4,10 +4,10 @@
 
 'use strict';
 
-define(['../app'], function(app) {
+define(['../user.module'], function(app) {
     (function() {
         var component = {
-            templateUrl: 'home/home.template.html',
+            templateUrl: 'user/home/home.template.html',
             controller: 'HomePageController',
             bindings: {
 

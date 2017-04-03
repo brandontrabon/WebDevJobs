@@ -5,5 +5,8 @@
 'use strict';
 
 define([
-
+    './site-nav.module',
+    './site-nav.service',
+    './site-nav.controller',
+    './site-nav.directive'
 ]);

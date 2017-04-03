@@ -7,5 +7,6 @@
 define([
     './app',
     './app.config',
-    './home/home'
+    './app.base.controller',
+    './app.base.routes'
 ]);

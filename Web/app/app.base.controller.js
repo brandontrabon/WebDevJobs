@@ -1,15 +1,15 @@
 /**
- * Created by btrabon on 4/1/17.
+ * Created by btrabon on 4/3/17.
  */
 
 'use strict';
 
-define(['../app'], function(app) {
+define(['./app'], function(app) {
     (function() {
         var controller = function() {
             var vm = this;
         };
 
-        app.controller('HomePageRouteController', controller);
+        app.controller('RoutingBaseController', controller);
     })();
 });

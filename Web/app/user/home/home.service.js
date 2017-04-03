@@ -4,7 +4,7 @@
 
 'use strict';
 
-define(['../app'], function(app) {
+define(['../user.module'], function(app) {
     (function() {
         var service = function() {
             var vm = this;

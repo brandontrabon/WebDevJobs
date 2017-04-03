@@ -4,11 +4,13 @@
 
 'use strict';
 
-define(['../app'], function(app) {
+define(['../user.module'], function(app) {
     (function() {
         var controller = function(HomePageService) {
             var vm = this;
         };
+
+        controller.$inject = ['HomePageService'];
 
         app.controller('HomePageController', controller);
     })();

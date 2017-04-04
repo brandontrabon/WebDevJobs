@@ -1,5 +1,27 @@
 .site-nav {
+  &.dark {
+    .nav {
+      &.navbar-nav {
+        .dropdown {
+          .dropdown-menu {
+            background-color: #222;
 
+            > li > a {
+              color: #fff;
+            }
+
+            > li > a:hover {
+              background-color: #888;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+
+  }
 }
 
 .site-nav-fixed {

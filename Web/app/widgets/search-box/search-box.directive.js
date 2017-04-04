@@ -13,7 +13,7 @@ define(['./search-box.module'], function(app) {
                 controller: 'SearchBoxController',
                 controllerAs: 'vm',
                 bindToController: {
-
+                    searchbuttontext: '@'
                 },
                 templateUrl: 'widgets/search-box/search-box.template.html'
             };

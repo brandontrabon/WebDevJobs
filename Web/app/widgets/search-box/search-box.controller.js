@@ -8,7 +8,7 @@ define(['./search-box.module'], function(app) {
     (function() {
         var controller = function(SearchBoxService) {
             var vm = this;
-        }
+        };
 
         controller.$inject = ['SearchBoxService'];
 

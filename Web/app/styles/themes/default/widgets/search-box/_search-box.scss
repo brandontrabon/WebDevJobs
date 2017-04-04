@@ -1,3 +1,11 @@
 .search-box {
+  .form-control {
+    &:focus {
+      border-color: #ccc;
+    }
+  }
 
+  .input-group-addon {
+    background-color: #fff;
+  }
 }

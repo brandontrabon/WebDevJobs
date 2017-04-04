@@ -8,5 +8,6 @@ define([
     './app',
     './app.config',
     './app.base.controller',
-    './app.base.routes'
+    './app.base.routes',
+    'bootstrap-sass-js'
 ]);

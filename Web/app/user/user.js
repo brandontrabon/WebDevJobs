@@ -7,6 +7,7 @@
 define([
     './user.module',
     './home/home',
+    './signin/signin',
     './user.base.controller',
     './user.routes'
 ]);

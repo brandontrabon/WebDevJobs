@@ -24,6 +24,14 @@ define(['./user.module'], function(app) {
                     resolve: {
 
                     }
+                })
+                .state('base.user.signin', {
+                    url: '/signin',
+                    controller: 'SigninPageRouteController as src',
+                    template: '<signin-page></signin-page>',
+                    resolve: {
+
+                    }
                 });
 
             $urlRouterProvider.otherwise(function($injector) {

@@ -1,19 +1,9 @@
 <div class="container signin-page">
     <div class="col-lg-4 col-lg-offset-4 signin-box">
         <div class="row">
-            <div class="col-lg-12 input-group">
-                <span class="input-group-addon">
-                    <i class="fa fa-fw fa-user"/>
-                </span>
-                <input type="text" class="form-control" placeholder="Username" />
-            </div>
-            <div class="col-lg-12 input-group">
-                <span class="input-group-addon">
-                    <i class="fa fa-fw fa-key"/>
-                </span>
-                <input type="text" class="form-control" placeholder="Password" />
-            </div>
-            <div class="col-lg-10 col-lg-offset-1">
+            <icon-textbox icon="user" placeholder="Username" model="vm.user.username"></icon-textbox>
+            <icon-textbox icon="key" placeholder="Password" model="vm.user.password"></icon-textbox>
+            <div class="col-lg-10 col-lg-offset-1 login-button">
                 <button class="btn btn-primary">Signin</button>
             </div>
         </div>

@@ -7,6 +7,7 @@
 define([
     'angular',
     'ui.router',
+    './widgets/icon-textbox/icon-textbox',
     './user/user',
     './widgets/site-nav/site-nav',
     './widgets/search-box/search-box'
@@ -14,6 +15,7 @@ define([
     return (function() {
         var app = ng.module('webDevJobs', [
             'ui.router',
+            'iconTextBox',
             'user',
             'siteNav',
             'searchBox'

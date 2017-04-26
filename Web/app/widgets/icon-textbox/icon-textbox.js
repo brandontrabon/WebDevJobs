@@ -6,5 +6,6 @@
 
 define([
     './icon-textbox.module',
+    './icon-textbox.controller',
     './icon-textbox.directive'
 ]);

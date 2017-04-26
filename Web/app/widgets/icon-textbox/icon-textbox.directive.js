@@ -4,3 +4,23 @@
 
 'use strict';
 
+define(['./icon-textbox.module'], function(app) {
+    (function() {
+        var directive = function() {
+            return {
+                restrict: 'E',
+                scope: {},
+                controller: 'IconTextboxController',
+                controllerAs: 'vm',
+                bindToController: {
+                    icon: '@',
+                    placeholder: '@',
+                    model: '='
+                },
+                templateUrl: 'widgets/icon-textbox/icon-textbox.template.html'
+            };
+        };
+
+        app.directive('iconTextbox', directive);
+    })();
+});

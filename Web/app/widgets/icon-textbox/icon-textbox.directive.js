@@ -15,6 +15,7 @@ define(['./icon-textbox.module'], function(app) {
                 bindToController: {
                     icon: '@',
                     placeholder: '@',
+                    type: '@',
                     model: '='
                 },
                 templateUrl: 'widgets/icon-textbox/icon-textbox.template.html'

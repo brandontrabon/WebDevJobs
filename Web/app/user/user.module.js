@@ -4,9 +4,9 @@
 
 'use strict';
 
-define(['angular'], function(ng) {
+define(['angular', './register/register'], function(ng) {
     return (function() {
-        var app = ng.module('user', []);
+        var app = ng.module('user', ['register']);
 
         return app;
     })();

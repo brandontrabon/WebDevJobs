@@ -1,10 +1,17 @@
 <div class="container signin-page">
     <div class="col-lg-4 col-lg-offset-4 signin-box">
         <div class="row">
-            <icon-textbox icon="user" placeholder="Username" model="vm.user.username"></icon-textbox>
-            <icon-textbox icon="key" placeholder="Password" model="vm.user.password"></icon-textbox>
+            <div class="form-group">
+                <icon-textbox icon="user" placeholder="Username" model="vm.user.username" type="text"></icon-textbox>
+            </div>
+            <div class="form-group">
+                <icon-textbox icon="key" placeholder="Password" model="vm.user.password" type="password"></icon-textbox>
+            </div>
             <div class="col-lg-10 col-lg-offset-1 login-button">
                 <button class="btn btn-primary">Signin</button>
+            </div>
+            <div>
+                <a ui-sref="base.user.register.userInfo">Register</a>
             </div>
         </div>
     </div>

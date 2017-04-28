@@ -6,6 +6,7 @@
 
 define([
     './app',
+    './services/services',
     './app.config',
     './app.base.controller',
     './app.base.routes',

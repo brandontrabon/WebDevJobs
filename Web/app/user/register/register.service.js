@@ -9,21 +9,31 @@ define(['./register.module'], function(app) {
         var service = function() {
             var vm = this;
 
-            vm.saveUserInformation = saveUserInformation;
+            vm.registration = {};
 
-            function saveUserInformation(user) {
+            vm.setUserInformation = setUserInformation;
+            vm.uploadResume = uploadResume;
+            vm.setJobInformation = setJobInformation;
+            vm.setSkillInformation = setSkillInformation;
+            vm.save = save;
 
+            function setUserInformation(user) {
+                vm.registration.userInfo = user;
             }
 
             function uploadResume(file) {
-
+                console.log(file);
             }
 
-            function saveJobInformation(jobs) {
-
+            function setJobInformation(jobs) {
+                vm.registration.jobs = jobs;
             }
 
-            function saveSkillInformation(skills) {
+            function setSkillInformation(skills) {
+                vm.registration.skills = skills;
+            }
+
+            function save() {
 
             }
         };

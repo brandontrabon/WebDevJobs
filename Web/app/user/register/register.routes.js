@@ -8,29 +8,29 @@ define(['./register.module'], function(app) {
     (function() {
         app.config(['$stateProvider', function($stateProvider) {
             $stateProvider
-                .state('base.register', {
+                .state('base.user.register', {
                     url: '/register',
                     abstract: true,
                     templateUrl: 'user/register/register.template.html'
                 })
-                .state('base.register.userInfo', {
+                .state('base.user.register.userInfo', {
                     url: '/userinfo',
-                    controller: 'UserInfoRouteController as uirc',
+                    controller: 'UserInfoPageRouteController as uirc',
                     template: '<user-info-page></user-info-page>'
                 })
-                .state('base.register.upload', {
+                .state('base.user.register.upload', {
                     url: '/upload',
-                    controller: 'UploadRouteController as urc',
+                    controller: 'UploadPageRouteController as urc',
                     template: '<upload-page></upload-page>'
                 })
-                .state('base.register.jobs', {
+                .state('base.user.register.jobs', {
                     url: '/jobs',
-                    controller: 'JobsRouteController as jrc',
+                    controller: 'JobsPageRouteController as jrc',
                     template: '<jobs-page></jobs-page>'
                 })
-                .state('base.register.skills', {
+                .state('base.user.register.skills', {
                     url: '/skills',
-                    controller: 'SkillsRouteController as src',
+                    controller: 'SkillsPageRouteController as src',
                     template: '<skills-page></skills-page>'
                 });
         }]);

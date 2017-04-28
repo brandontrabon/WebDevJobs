@@ -1,0 +1,34 @@
+<div class="user-info-page">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="header">
+            User Information
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.firstName" placeholder="First Name"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.lastName" placeholder="Last Name"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.address1" placeholder="Address 1"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.address2" placeholder="Address 2"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.city" placeholder="City"/>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.state" placeholder="State/Province"/>
+        </div>
+        <div class="form-group empty-space-below">
+            <input type="text" class="form-control" data-ng-model="$ctrl.user.postalCode" placeholder="Postal Code"/>
+        </div>
+        <div class="form-group">
+            <icon-textbox icon="user" placeholder="Username" model="$ctrl.user.username" type="text"></icon-textbox>
+        </div>
+        <div class="form-group">
+            <icon-textbox icon="key" placeholder="Password" model="$ctrl.user.password" type="password"></icon-textbox>
+        </div>
+    </div>
+</div>

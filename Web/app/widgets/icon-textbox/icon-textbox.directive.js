@@ -16,6 +16,7 @@ define(['./icon-textbox.module'], function(app) {
                     icon: '@',
                     placeholder: '@',
                     type: '@',
+                    name: '@',
                     model: '='
                 },
                 templateUrl: 'widgets/icon-textbox/icon-textbox.template.html'

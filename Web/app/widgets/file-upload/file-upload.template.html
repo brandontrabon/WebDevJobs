@@ -1,0 +1,27 @@
+<div class="form-group file-upload">
+    <label class="control-label">{{vm.uploadTitle}}</label>
+    <input type="file"
+           id="{{vm.uploadId}}"
+           data-ng-model="vm.model"
+           file-upload-change="vm.addFiles"
+           name="{{vm.uploadId}}" />
+    <div>
+        <label for="{{vm.uploadId}}" class="btn btn-primary">
+            <i class="fa fa-plus"></i>&nbsp;Add File
+        </label>
+        <button type="button" data-ng-click="vm.uploadFiles()" class="btn btn-success">
+            <i class="fa fa-upload"></i>&nbsp;Upload Files
+        </button>
+        <button type="button" data-ng-click="vm.removeAllFiles()" class="btn btn-danger">
+            <i class="fa fa-minus"></i>&nbsp;Remove All Files
+        </button>
+    </div>
+    <div class="col-lg-12">
+        <div data-ng-repeat="file in vm.currentFiles">
+            <span class="col-lg-8">{{file.fileName}}</span>
+            <button type="button" data-ng-click="vm.removeFile(file)" class="btn btn-danger">
+                <i class="fa fa-minus"></i>&nbsp;Remove File
+            </button>
+        </div>
+    </div>
+</div>

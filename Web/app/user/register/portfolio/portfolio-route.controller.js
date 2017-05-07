@@ -6,10 +6,10 @@
 
 define(['../register.module'], function(app) {
     (function() {
-        var controller = function(ProfilePageService) {
+        var controller = function() {
             var vm = this;
         };
 
-        app.controller('ProfilePageController', controller);
+        app.controller('PortfolioPageRouteController', controller);
     })();
 });

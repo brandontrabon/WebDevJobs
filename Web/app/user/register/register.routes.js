@@ -11,6 +11,7 @@ define(['./register.module'], function(app) {
                 .state('base.user.register', {
                     url: '/register',
                     abstract: true,
+                    controller: 'RegisterController as vm',
                     templateUrl: 'user/register/register.template.html'
                 })
                 .state('base.user.register.userInfo', {
@@ -32,6 +33,11 @@ define(['./register.module'], function(app) {
                     url: '/skills',
                     controller: 'SkillsPageRouteController as src',
                     template: '<skills-page></skills-page>'
+                })
+                .state('base.user.register.portfolio', {
+                    url: '/portfolio',
+                    controller: 'PortfolioPageRouteController as prc',
+                    template: '<portfolio-page></portfolio-page>'
                 });
         }]);
     })();

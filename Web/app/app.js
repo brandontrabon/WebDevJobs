@@ -10,7 +10,8 @@ define([
     './widgets/icon-textbox/icon-textbox',
     './user/user',
     './widgets/site-nav/site-nav',
-    './widgets/search-box/search-box'
+    './widgets/search-box/search-box',
+    './widgets/file-upload/file-upload'
 ], function(ng) {
     return (function() {
         var app = ng.module('webDevJobs', [
@@ -18,7 +19,8 @@ define([
             'iconTextBox',
             'user',
             'siteNav',
-            'searchBox'
+            'searchBox',
+            'fileUpload'
         ]);
 
         return app;

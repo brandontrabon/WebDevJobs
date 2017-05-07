@@ -1,6 +1,7 @@
 
 @import "widgets/site-nav/site-nav";
 @import "widgets/search-box/search-box";
+@import "widgets/file-upload/file-upload";
 
 @import "user/home/home";
 @import "user/signin/signin";
@@ -9,4 +10,4 @@
 @import "user/register/upload/upload";
 @import "user/register/jobs/jobs";
 @import "user/register/skills/skills";
-@import "user/register/profile/profile";
+@import "user/register/portfolio/portfolio";

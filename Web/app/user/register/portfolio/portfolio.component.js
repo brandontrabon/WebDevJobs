@@ -7,10 +7,10 @@
 define(['../register.module'], function(app) {
     (function() {
         var component = {
-            templateUrl: 'user/register/profile/profile.template.html',
+            templateUrl: 'user/register/portfolio/portfolio.template.html',
             controller: 'ProfilePageController'
         };
 
-        app.component('profilePage', component);
+        app.component('portfolioPage', component);
     })();
 });

@@ -10,6 +10,6 @@ define(['../register.module'], function(app) {
             var vm = this;
         };
 
-        app.service('ProfilePageService', service);
+        app.service('PortfolioPageService', service);
     })();
 });

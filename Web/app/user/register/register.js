@@ -7,9 +7,11 @@
 define([
     './register.module',
     './register.service',
+    './register.controller',
     './register.routes',
     './user-info/user-info',
     './upload/upload',
     './jobs/jobs',
-    './skills/skills'
+    './skills/skills',
+    './portfolio/portfolio'
 ]);

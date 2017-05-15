@@ -5,6 +5,8 @@
 'use strict';
 
 define([
+    './file.class',
+    './file-converter.class',
     './file-upload.module',
     './file-upload.service',
     './file-upload.controller',

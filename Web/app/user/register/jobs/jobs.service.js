@@ -6,7 +6,7 @@
 
 define(['../register.module'], function(app) {
     (function() {
-        var service = function() {
+        var service = function(RegisterBaseService) {
             var vm = this;
 
             vm.savedData = {
@@ -27,6 +27,8 @@ define(['../register.module'], function(app) {
                 vm.savedData.jobs.push(job);
             }
         };
+
+        service.$inject = ['RegisterBaseService'];
 
         app.service('JobsPageService', service);
     })();

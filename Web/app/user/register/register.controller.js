@@ -6,23 +6,23 @@
 
 define(['./register.module'], function(app) {
     (function() {
-        var controller = function(RegisterService, $state) {
+        var controller = function(RegisterBaseService, $state) {
             var vm = this;
 
-            vm.progressInformation = RegisterService.progressInformation;
-            vm.nextStep = RegisterService.nextStep;
-            vm.previousStep = RegisterService.previousStep;
-            vm.save = RegisterService.save;
+            vm.progressInformation = RegisterBaseService.progressInformation;
+            vm.nextStep = RegisterBaseService.nextStep;
+            vm.previousStep = RegisterBaseService.previousStep;
+            vm.save = RegisterBaseService.save;
 
             vm.$onInit = onInit;
 
             function onInit() {
-                RegisterService.init($state);
+                RegisterBaseService.init($state);
             }
         };
 
-        controller.$inject = ['RegisterService', '$state'];
+        controller.$inject = ['RegisterBaseService', '$state'];
 
-        app.controller('RegisterController', controller);
+        app.controller('RegisterBaseController', controller);
     })();
 });

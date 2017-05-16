@@ -14,6 +14,7 @@ define(['./register.module'], function(app) {
             vm.registration = {};
             vm.progressInformation = {
                 currentStep: 1,
+                isFirstStep: true,
                 isLastStep: false
             };
 
@@ -76,22 +77,27 @@ define(['./register.module'], function(app) {
                 switch (vm.progressInformation.currentStep) {
                     case 1:
                         stateName = 'base.user.register.userInfo';
+                        vm.progressInformation.isFirstStep = true;
                         vm.progressInformation.isLastStep = false;
                         break;
                     case 2:
                         stateName = 'base.user.register.upload';
+                        vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
                         break;
                     case 3:
                         stateName = 'base.user.register.jobs';
+                        vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
                         break;
                     case 4:
                         stateName = 'base.user.register.skills';
+                        vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
                         break;
                     case 5:
                         stateName = 'base.user.register.portfolio';
+                        vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = true;
                         break;
                 }
@@ -100,6 +106,6 @@ define(['./register.module'], function(app) {
             }
         };
 
-        app.service('RegisterService', service);
+        app.service('RegisterBaseService', service);
     })();
 });

@@ -11,7 +11,7 @@ define(['./register.module'], function(app) {
                 .state('base.user.register', {
                     url: '/register',
                     abstract: true,
-                    controller: 'RegisterController as vm',
+                    controller: 'RegisterBaseController as vm',
                     templateUrl: 'user/register/register.template.html'
                 })
                 .state('base.user.register.userInfo', {

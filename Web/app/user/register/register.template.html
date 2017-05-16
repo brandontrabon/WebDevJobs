@@ -20,7 +20,10 @@
     <div class="col-lg-8 col-lg-offset-2">
         <div class="form-group">
             <div style="float: left;">
-                <button type="button" class="btn btn-primary nav-buttons" data-ng-click="vm.previousStep()">&lt; Previous</button>
+                <button type="button"
+                        class="btn btn-primary nav-buttons"
+                        data-ng-disabled="vm.progressInformation.isFirstStep === true"
+                        data-ng-click="vm.previousStep()">&lt; Previous</button>
             </div>
             <div style="float: right;">
                 <button type="button"

@@ -1,3 +1,33 @@
 <div class="skills-page">
-    This is the skills page.
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="header">My Skills</div>
+        <div class="description">List your skills and level of experience in each.</div>
+        <div data-ng-repeat="skill in $ctrl.savedData.skills">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" data-ng-model="" placeholder="Skill"/>
+                    </div>
+                    <div class="col-lg-3">
+                        <select>
+                            <option value="0" selected>Skill Level</option>
+                            <option value="1">Beginner</option>
+                            <option value="2">Intermediate</option>
+                            <option value="3">Proficient</option>
+                            <option value="4">Advanced</option>
+                            <option value="5">Expert</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" data-ng-model="" placeholder="Years Experience"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary" data-ng-click="$ctrl.addNewSkill()">
+                <i class="fa fa-plus"></i> Add Skill
+            </button>
+        </div>
+    </div>
 </div>

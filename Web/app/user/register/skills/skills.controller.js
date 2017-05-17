@@ -9,6 +9,8 @@ define(['../register.module'], function(app) {
         var controller = function(SkillsPageService) {
             var vm = this;
 
+            vm.savedData = SkillsPageService.savedData;
+
             vm.addNewSkill = SkillsPageService.addNewSkill;
         };
 

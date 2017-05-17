@@ -8,7 +8,7 @@ define(['../register.module'], function(app) {
     (function() {
         var component = {
             templateUrl: 'user/register/portfolio/portfolio.template.html',
-            controller: 'ProfilePageController'
+            controller: 'PortfolioPageController'
         };
 
         app.component('portfolioPage', component);

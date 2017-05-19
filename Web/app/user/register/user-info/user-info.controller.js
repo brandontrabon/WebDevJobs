@@ -8,6 +8,16 @@ define(['../register.module'], function(app) {
     (function() {
         var controller = function(UserInfoPageService) {
             var vm = this;
+
+            vm.$onInit = onInit;
+
+            function onInit() {
+                UserInfoPageService.init(pageChangeCallback);
+            }
+
+            function pageChangeCallback() {
+                return vm.userInfoForm.$valid;
+            }
         };
 
         controller.$inject = ['UserInfoPageService'];

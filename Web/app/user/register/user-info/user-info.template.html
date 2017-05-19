@@ -1,6 +1,6 @@
 <div class="user-info-page">
     <div class="col-lg-8 col-lg-offset-2">
-        <form name="userInfoForm" novalidate>
+        <form name="$ctrl.userInfoForm" novalidate>
             <div class="header">
                 User Information
             </div>
@@ -17,6 +17,13 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.lastName"
                        placeholder="Last Name" required />
+            </div>
+            <div class="form-group">
+                <input type="tel"
+                       name="phone"
+                       class="form-control"
+                       data-ng-model="$ctrl.user.phone"
+                       placeholder="Phone Number" required />
             </div>
             <div class="form-group">
                 <input type="text"
@@ -46,19 +53,26 @@
                        data-ng-model="$ctrl.user.state"
                        placeholder="State/Province" required />
             </div>
-            <div class="form-group empty-space-below">
+            <div class="form-group">
                 <input type="text"
                        name="postalCode"
                        class="form-control"
                        data-ng-model="$ctrl.user.postalCode"
                        placeholder="Postal Code" required />
             </div>
+            <div class="form-group empty-space-below">
+                <input type="text"
+                       name="countryCode"
+                       class="form-control"
+                       data-ng-model="$ctrl.user.country"
+                       placeholder="Country" required />
+            </div>
             <div class="form-group">
                 <icon-textbox name="username"
                               icon="user"
-                              placeholder="Username"
+                              placeholder="Username (Email)"
                               model="$ctrl.user.username"
-                              type="text"></icon-textbox>
+                              type="email"></icon-textbox>
             </div>
             <div class="form-group empty-space-below">
                 <icon-textbox name="password"

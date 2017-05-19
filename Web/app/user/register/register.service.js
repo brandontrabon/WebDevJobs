@@ -11,6 +11,7 @@ define(['./register.module'], function(app) {
 
             vm.$state;
 
+            vm.callbacks = [];
             vm.registration = {};
             vm.progressInformation = {
                 currentStep: 1,
@@ -19,6 +20,7 @@ define(['./register.module'], function(app) {
             };
 
             vm.init = init;
+            vm.addCallback = addCallback;
             vm.nextStep = nextStep;
             vm.previousStep = previousStep;
             vm.setUserInformation = setUserInformation;
@@ -32,14 +34,32 @@ define(['./register.module'], function(app) {
                 vm.$state = $state;
             }
 
+            function addCallback(callback) {
+                vm.callbacks.push(callback);
+            }
+
             function nextStep() {
-                vm.progressInformation.currentStep++;
-                changeState();
+                if (vm.callbacks[(vm.progressInformation.currentStep - 1)]) {
+                    if (vm.callbacks[(vm.progressInformation.currentStep - 1)]() === true) {
+                        vm.progressInformation.currentStep++;
+                        changeState();
+                    }
+                } else {
+                    vm.progressInformation.currentStep++;
+                    changeState();
+                }
             }
 
             function previousStep() {
-                vm.progressInformation.currentStep--;
-                changeState();
+                if (vm.callbacks[(vm.progressInformation.currentStep - 1)]) {
+                    if (vm.callbacks[(vm.progressInformation.currentStep - 1)]() === true) {
+                        vm.progressInformation.currentStep--;
+                        changeState();
+                    }
+                } else {
+                    vm.progressInformation.currentStep--;
+                    changeState();
+                }
             }
 
             function changeState() {
@@ -79,26 +99,31 @@ define(['./register.module'], function(app) {
                         stateName = 'base.user.register.userInfo';
                         vm.progressInformation.isFirstStep = true;
                         vm.progressInformation.isLastStep = false;
+
                         break;
                     case 2:
                         stateName = 'base.user.register.upload';
                         vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
+
                         break;
                     case 3:
                         stateName = 'base.user.register.jobs';
                         vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
+
                         break;
                     case 4:
                         stateName = 'base.user.register.skills';
                         vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = false;
+
                         break;
                     case 5:
                         stateName = 'base.user.register.portfolio';
                         vm.progressInformation.isFirstStep = false;
                         vm.progressInformation.isLastStep = true;
+
                         break;
                 }
 

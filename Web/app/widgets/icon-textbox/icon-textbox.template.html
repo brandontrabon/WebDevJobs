@@ -6,5 +6,11 @@
            name="{{vm.name}}"
            class="form-control"
            data-ng-model="vm.model"
-           placeholder="{{vm.placeholder}}"/>
+           placeholder="{{vm.placeholder}}" data-ng-if="vm.inputRequired === false" />
+    <input type="{{vm.type}}"
+           name="{{vm.name}}"
+           class="form-control"
+           data-ng-model="vm.model"
+           placeholder="{{vm.placeholder}}" data-ng-if="vm.inputRequired === true"
+           required />
 </div>

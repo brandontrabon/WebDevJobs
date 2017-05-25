@@ -16,7 +16,7 @@ define(['../register.module'], function(app) {
             }
 
             function pageChangeCallback() {
-                return vm.userInfoForm.$valid;
+                return vm.form.$valid;
             }
         };
 

@@ -1,6 +1,6 @@
 <div class="user-info-page">
     <div class="col-lg-8 col-lg-offset-2">
-        <form name="$ctrl.userInfoForm" novalidate>
+        <form name="$ctrl.form" novalidate>
             <div class="header">
                 User Information
             </div>
@@ -10,6 +10,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.firstName"
                        placeholder="First Name" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.firstName.$error.required && $ctrl.form.firstName.$touched">
+                    First Name is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="text"
@@ -17,6 +21,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.lastName"
                        placeholder="Last Name" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.lastName.$error.required && $ctrl.form.lastName.$touched">
+                    Last Name is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="tel"
@@ -24,6 +32,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.phone"
                        placeholder="Phone Number" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.phone.$error.required && $ctrl.form.phone.$touched">
+                    Phone Number is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="text"
@@ -31,6 +43,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.address1"
                        placeholder="Address 1" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.address1.$error.required && $ctrl.form.address1.$touched">
+                    Address is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="text"
@@ -45,6 +61,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.city"
                        placeholder="City" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.city.$error.required && $ctrl.form.city.$touched">
+                    City is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="text"
@@ -52,6 +72,10 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.state"
                        placeholder="State/Province" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.state.$error.required && $ctrl.form.state.$touched">
+                    State is required
+                </span>
             </div>
             <div class="form-group">
                 <input type="text"
@@ -59,27 +83,45 @@
                        class="form-control"
                        data-ng-model="$ctrl.user.postalCode"
                        placeholder="Postal Code" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.postalCode.$error.required && $ctrl.form.postalCode.$touched">
+                    Postal Code is required
+                </span>
             </div>
             <div class="form-group empty-space-below">
                 <input type="text"
-                       name="countryCode"
+                       name="country"
                        class="form-control"
                        data-ng-model="$ctrl.user.country"
                        placeholder="Country" required />
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.country.$error.required && $ctrl.form.country.$touched">
+                    Country is required
+                </span>
             </div>
             <div class="form-group">
                 <icon-textbox name="username"
                               icon="user"
                               placeholder="Username (Email)"
                               model="$ctrl.user.username"
-                              type="email"></icon-textbox>
+                              type="email"
+                              input-required="true"></icon-textbox>
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.username.$error.required && $ctrl.form.username.$touched">
+                    Username is required
+                </span>
             </div>
             <div class="form-group empty-space-below">
                 <icon-textbox name="password"
                               icon="key"
                               placeholder="Password"
                               model="$ctrl.user.password"
-                              type="password"></icon-textbox>
+                              type="password"
+                              input-required="true"></icon-textbox>
+                <span class="error-text"
+                      data-ng-show="$ctrl.form.password.$error.required && $ctrl.form.password.$touched">
+                    Password is required
+                </span>
             </div>
         </form>
     </div>

@@ -16,8 +16,20 @@
             <a ui-sref="base.user.register.portfolio">Portfolio</a>
         </li>
     </ul>
-    <div ui-view></div>
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-8">
+        <div ui-view></div>
+    </div>
+    <div class="col-lg-4">
+        <ul>
+            <li data-ng-repeat="group in vm.registration.errors">
+                {{group.header}}
+                <ul>
+                    <li data-ng-repeat="field in group.fields">{{field}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-8">
         <div class="form-group">
             <div style="float: left;">
                 <button type="button"

@@ -16,6 +16,10 @@ define(['../register.module'], function(app) {
             }
 
             function pageChangeCallback() {
+                // we have to add the form here since it does not exist when the page first loads
+                // this is because until the form has been interacted with it is not created
+                UserInfoPageService.addForm(vm.form);
+
                 return vm.form.$valid;
             }
         };

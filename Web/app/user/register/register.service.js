@@ -12,7 +12,10 @@ define(['./register.module'], function(app) {
             vm.$state;
 
             vm.callbacks = [];
-            vm.registration = {};
+            vm.forms = [];
+            vm.registration = {
+                errors: []
+            };
             vm.progressInformation = {
                 currentStep: 1,
                 isFirstStep: true,
@@ -21,6 +24,7 @@ define(['./register.module'], function(app) {
 
             vm.init = init;
             vm.addCallback = addCallback;
+            vm.addForm = addForm;
             vm.nextStep = nextStep;
             vm.previousStep = previousStep;
             vm.setUserInformation = setUserInformation;
@@ -29,6 +33,8 @@ define(['./register.module'], function(app) {
             vm.setSkillInformation = setSkillInformation;
             vm.setPortfolioInformation = setPortfolioInformation;
             vm.save = save;
+            vm.buildErrorObject = buildErrorObject;
+            vm.clearErrorObject = clearErrorObject;
 
             function init($state) {
                 vm.$state = $state;
@@ -38,11 +44,24 @@ define(['./register.module'], function(app) {
                 vm.callbacks.push(callback);
             }
 
+            function addForm(form) {
+                // if a form isn't added for the current step then add it
+                if (!vm.forms[(vm.progressInformation.currentStep - 1)])
+                    vm.forms.push(form);
+            }
+
             function nextStep() {
+                clearErrorObject();
+
                 if (vm.callbacks[(vm.progressInformation.currentStep - 1)]) {
                     if (vm.callbacks[(vm.progressInformation.currentStep - 1)]() === true) {
                         vm.progressInformation.currentStep++;
                         changeState();
+                    } else {
+                        // form validation failed so lets tell the user why
+                        console.log('current step ', vm.progressInformation.currentStep);
+                        console.log('forms ', vm.forms);
+                        buildErrorObject(vm.forms[(vm.progressInformation.currentStep - 1)].$error);
                     }
                 } else {
                     vm.progressInformation.currentStep++;
@@ -128,6 +147,42 @@ define(['./register.module'], function(app) {
                 }
 
                 return stateName;
+            }
+
+            function buildErrorObject(formErrors) {
+                var errorKeys = Object.keys(formErrors);
+                vm.registration.errors = [];
+
+                if (errorKeys.indexOf('required') > -1) {
+                    var requiredErrors = {
+                        "header": "These fields are required",
+                        "fields": []
+                    };
+
+                    for (var i = 0, length = formErrors.required.length; i < length; i++) {
+                        requiredErrors.fields.push(formErrors.required[i].$$element[0].placeholder);
+                    }
+
+                    vm.registration.errors.push(requiredErrors);
+                }
+
+                if (errorKeys.indexOf('email') > -1) {
+                    var emailErrors = {
+                        "header": "Invalid emails",
+                        "fields": []
+                    };
+
+                    for (var j = 0, length = formErrors.email.length; j < length; j++) {
+                        console.log('email error ', formErrors.email[j]);
+                        emailErrors.fields.push(formErrors.email[j].$$element[0].placeholder);
+                    }
+
+                    vm.registration.errors.push(emailErrors);
+                }
+            }
+
+            function clearErrorObject() {
+                vm.registration.errors = [];
             }
         };
 

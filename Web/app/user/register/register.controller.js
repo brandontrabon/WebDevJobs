@@ -13,6 +13,7 @@ define(['./register.module'], function(app) {
             vm.nextStep = RegisterBaseService.nextStep;
             vm.previousStep = RegisterBaseService.previousStep;
             vm.save = RegisterBaseService.save;
+            vm.registration = RegisterBaseService.registration;
 
             vm.$onInit = onInit;
 

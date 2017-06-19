@@ -27,7 +27,8 @@
                             </div>
                             <div class="col-md-3 col-xs-6">
                                 <input type="date" name="startDate{{$index}}" data-ng-model="job.startDate" placeholder="Start Date" class="form-control" required />
-                                <span class="error-text" data-ng-show="$ctrl.form.startDate{{index}}.$error.required && $ctrl.form.startDate{{index}}.$touched">
+                                <span class="error-text"
+                                      data-ng-show="$ctrl.form.startDate{{index}}.$error.required && $ctrl.form.startDate{{index}}.$touched">
                                 Start Date is required
                             </span>
                             </div>

@@ -1,51 +1,53 @@
-<div class="register">
-    <ul class="nav nav-pills">
-        <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 1 }">
-            <a ui-sref="base.user.register.userInfo">User Information</a>
-        </li>
-        <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 2 }">
-            <a ui-sref="base.user.register.upload">Upload</a>
-        </li>
-        <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 3 }">
-            <a ui-sref="base.user.register.jobs">Jobs</a>
-        </li>
-        <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 4 }">
-            <a ui-sref="base.user.register.skills">Skills</a>
-        </li>
-        <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 5 }">
-            <a ui-sref="base.user.register.portfolio">Portfolio</a>
-        </li>
-    </ul>
-    <div class="col-lg-8">
-        <div ui-view></div>
-    </div>
-    <div class="col-lg-4">
-        <ul>
-            <li data-ng-repeat="group in vm.registration.errors">
-                {{group.header}}
-                <ul>
-                    <li data-ng-repeat="field in group.fields">{{field}}</li>
-                </ul>
+<div class="register container-fluid">
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 1 }">
+                <a ui-sref="base.user.register.userInfo">User Information</a>
+            </li>
+            <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 2 }">
+                <a ui-sref="base.user.register.upload">Upload</a>
+            </li>
+            <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 3 }">
+                <a ui-sref="base.user.register.jobs">Jobs</a>
+            </li>
+            <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 4 }">
+                <a ui-sref="base.user.register.skills">Skills</a>
+            </li>
+            <li role="presentation" data-ng-class="{ 'active': vm.progressInformation.currentStep === 5 }">
+                <a ui-sref="base.user.register.portfolio">Portfolio</a>
             </li>
         </ul>
-    </div>
-    <div class="col-lg-8">
-        <div class="form-group">
-            <div style="float: left;">
-                <button type="button"
-                        class="btn btn-primary nav-buttons"
-                        data-ng-disabled="vm.progressInformation.isFirstStep === true"
-                        data-ng-click="vm.previousStep()">&lt; Previous</button>
-            </div>
-            <div style="float: right;">
-                <button type="button"
-                        class="btn btn-primary nav-buttons"
-                        data-ng-if="vm.progressInformation.isLastStep === false"
-                        data-ng-click="vm.nextStep()">Next &gt;</button>
-                <button type="button"
-                        class="btn btn-primary nav-buttons"
-                        data-ng-if="vm.progressInformation.isLastStep === true"
-                        data-ng-click="vm.save()">Finish</button>
+        <div class="col-xs-8">
+            <div ui-view></div>
+        </div>
+        <div class="col-xs-4">
+            <ul>
+                <li data-ng-repeat="group in vm.registration.errors">
+                    {{group.header}}
+                    <ul>
+                        <li data-ng-repeat="field in group.fields">{{field}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <div class="form-group">
+                <div style="float: left;">
+                    <button type="button"
+                            class="btn btn-primary nav-buttons"
+                            data-ng-disabled="vm.progressInformation.isFirstStep === true"
+                            data-ng-click="vm.previousStep()">&lt; Previous</button>
+                </div>
+                <div style="float: right;">
+                    <button type="button"
+                            class="btn btn-primary nav-buttons"
+                            data-ng-if="vm.progressInformation.isLastStep === false"
+                            data-ng-click="vm.nextStep()">Next &gt;</button>
+                    <button type="button"
+                            class="btn btn-primary nav-buttons"
+                            data-ng-if="vm.progressInformation.isLastStep === true"
+                            data-ng-click="vm.save()">Finish</button>
+                </div>
             </div>
         </div>
     </div>

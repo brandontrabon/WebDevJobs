@@ -8,10 +8,18 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-6">
-                                <input type="text" class="form-control" data-ng-model="skill.skill" placeholder="Skill" required/>
+                                <input type="text"
+                                       name="skill{{$index}}"
+                                       class="form-control"
+                                       data-ng-model="skill.skill"
+                                       placeholder="Skill" required/>
+                                <span class="error-text"
+                                      data-ng-show="$ctrl.form.skill{{$index}}.$error.required && $ctrl.form.skill{{$index}}.$touched">
+                                    Skill is required
+                                </span>
                             </div>
                             <div class="col-xs-3">
-                                <select class="form-control" required>
+                                <select name="level{{$index}}" class="form-control" data-ng-model="skill.level" required>
                                     <option value="0" selected>Skill Level</option>
                                     <option value="1">Beginner</option>
                                     <option value="2">Intermediate</option>
@@ -19,9 +27,21 @@
                                     <option value="4">Advanced</option>
                                     <option value="5">Expert</option>
                                 </select>
+                                <span class="error-text"
+                                      data-ng-show="$ctrl.form.level{{$index}}.$error.required && $ctrl.form.skill{{$index}}.$touched">
+                                    Skill level is required
+                                </span>
                             </div>
                             <div class="col-xs-3">
-                                <input type="text" class="form-control" data-ng-model="skill.yearsExperience" placeholder="Years Experience" required/>
+                                <input type="number"
+                                       name="years{{$index}}"
+                                       class="form-control"
+                                       data-ng-model="skill.yearsExperience"
+                                       placeholder="Years Experience" required/>
+                                <span class="error-text"
+                                      data-ng-show="$ctrl.form.years{{$index}}.$error.required && $ctrl.form.years{{$index}}.$touched">
+                                    Years experience required
+                                </span>
                             </div>
                         </div>
                     </div>

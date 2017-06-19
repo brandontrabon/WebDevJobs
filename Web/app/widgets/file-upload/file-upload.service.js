@@ -31,6 +31,7 @@ define(['./file-upload.module', './file.class', './file-converter.class'], funct
                         reader.onload = (function() {
                             return function(e) {
                                 file.fileContents = fileConverter.convertToBase64(e.target.result);
+                                console.log('uploaded file ', file);
                             };
                         })(files[i]);
 

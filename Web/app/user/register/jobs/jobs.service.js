@@ -13,7 +13,15 @@ define(['../register.module'], function(app) {
                 jobs: []
             };
 
+            vm.init = init;
             vm.addNewJob = addNewJob;
+            vm.addForm = RegisterBaseService.addForm;
+            vm.buildErrorObject = RegisterBaseService.buildErrorObject;
+            vm.clearErrorObject = RegisterBaseService.clearErrorObject;
+
+            function init(pageChangeCallback) {
+                RegisterBaseService.addCallback(pageChangeCallback);
+            }
 
             function addNewJob() {
                 var job = {

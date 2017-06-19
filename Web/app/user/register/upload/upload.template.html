@@ -1,5 +1,7 @@
 <div class="upload-page">
     <div class="col-lg-12">
-        <div><file-upload upload-id="resume" upload-title="Upload your resume files"></file-upload></div>
+        <form name="$ctrl.form">
+            <div><file-upload upload-id="resume" data-ng-model="$ctrl.files" upload-title="Upload your resume files"></file-upload></div>
+        </form>
     </div>
 </div>
